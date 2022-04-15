@@ -11,7 +11,9 @@ export default class Todolist extends Component {
       }
 
     render() {
-        const todoList = this.props.list.map(lis => <h3>{lis}</h3>);
+        //const todoList = this.props.list.map(lis => <h3>{lis}</h3>);
+        //const todoList = this.props.list.map(lis => <Todoitem ptodo={{lis}}/>);
+        const todoList = this.props.list.map(lis => {return <Todoitem ptodo={lis}/>});
 
         return (
             <>
