@@ -1,25 +1,48 @@
 import logo from './logo.svg';
 import './App.css';
+import 'antd/dist/antd.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Newtodo from './components/Newtodo';
+import Todolist from './components/Todolist';
+import { Component } from 'react';
+
+const titlecss = {
+  textAlign: 'center',
+  color: 'white'
 }
 
-export default App;
+export default class App extends Component {
+
+  constructor() {
+    super();
+
+    this.state = {
+      todoListArray: []
+    }
+  }
+
+  addtodo(todo) {
+    this.setState(previousState => ({
+      todoListArray: [...previousState.todoListArray, todo]
+    }), () => { console.log(this.state.todoListArray); });
+
+
+
+  }
+
+
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <h2 style={titlecss}>Avi-Todo {this.props.uname}</h2>
+          <Newtodo onNewTodo={todo => this.addtodo(todo)} />
+          <Todolist list={this.state.todoListArray} />
+        </header>
+      </div>
+    );
+
+  }
+
+}
+
