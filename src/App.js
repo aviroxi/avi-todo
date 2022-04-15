@@ -17,16 +17,16 @@ export default class App extends Component {
     super();
 
     this.state = {
-      todoListArray: []
+      todoListArray: [],
+      todo:''
     }
   }
 
   addtodo(todo) {
+    this.setState({todo});
     this.setState(previousState => ({
       todoListArray: [...previousState.todoListArray, todo]
     }), () => { console.log(this.state.todoListArray); });
-
-
 
   }
 
@@ -37,7 +37,7 @@ export default class App extends Component {
         <header className="App-header">
           <h2 style={titlecss}>Avi-Todo {this.props.uname}</h2>
           <Newtodo onNewTodo={todo => this.addtodo(todo)} />
-          <Todolist list={this.state.todoListArray} />
+          <Todolist list={this.state.todoListArray} ptodo={this.state.todo}/>
         </header>
       </div>
     );
