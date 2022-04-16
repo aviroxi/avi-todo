@@ -52,6 +52,8 @@ export default class Newtodo extends Component {
         this.setState({todo});
     }
 
+    
+
     render() {
         
 
@@ -64,7 +66,7 @@ export default class Newtodo extends Component {
                     onChange={event => this.onNewTodo(event.target.value)}
                     style={inputcss} />
                 <br />
-                <Button type='primary' style={buttoncss} onClick={this.handleClick}>Add</Button>
+                <Button type='primary' style={buttoncss} onClick={this.handleClick} >Add</Button>
                 <Button type='primary' style={buttoncsss} onClick={this.handleClickk}>Delete All</Button>
                 {/* your input is {this.state.todo} */}
             </div>
