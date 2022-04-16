@@ -17,7 +17,9 @@ export default class Todolist extends Component {
 
         return (
             <>
-                <div>Todolist</div>
+                <div>
+                    <h1 style={{color:'white'}}>TODOLIST</h1>
+                </div>
                 {todoList}
             </>
         )
