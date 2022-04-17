@@ -1,4 +1,4 @@
-import { Card, Typography } from 'antd'
+import { Button, Card, Typography } from 'antd'
 import React, { Component } from 'react'
 
 import './s.css';
@@ -25,7 +25,7 @@ export default class Todoitem extends Component {
     
     return (
       <div>
-        <Card
+        <Card 
           title={
             <Title level={5} style={{ color: 'white' }}>
               Avi-Todo - {this.props.pindex+1}
@@ -34,6 +34,7 @@ export default class Todoitem extends Component {
           style={cardcss}
           extra={<Title level={5} style={{ color: 'white' }}>{this.props.ptime}</Title>}>
           <p>{this.props.ptodo}</p>
+          <Button type='primary' danger onClick={()=>this.props.onTodoSelect(this.props.pindex)}>delete</Button>
         </Card>
 
       </div>

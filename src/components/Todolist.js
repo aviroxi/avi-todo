@@ -23,7 +23,7 @@ export default class Todolist extends Component {
         const todoList = this.props.list.map(
             (lis, index) => {
                 const time=this.props.timelist[index];
-                return <Todoitem ptodo={lis} ptime={time} pindex={index}/>
+                return <Todoitem onTodoSelect={this.props.onTodoSelect} ptodo={lis} ptime={time} pindex={index}/>
             }
         );
 
