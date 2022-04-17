@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 const buttoncss = {
     color: 'white',
     height: '50px',
-    fontWeight:'bold',
+    fontWeight: 'bold',
     border: 0,
     width: 100,
     margin: '10px 0',
@@ -12,12 +12,12 @@ const buttoncss = {
 }
 const buttoncsss = {
     color: 'white',
-    fontWeight:'bold',
+    fontWeight: 'bold',
     height: '50px',
     border: 0,
     margin: '10px 40px',
     fontSize: '1.5rem',
-    backgroundColor:'red'
+    backgroundColor: 'red'
 }
 
 const inputcss = {
@@ -37,40 +37,49 @@ export default class Newtodo extends Component {
 
         this.state = {
             todo: '',
-            time:''
+            time: ''
         }
     }
 
     handleClick = () => {
-        var now = new Date();
-        const t = now.toString()
-        const time = t.slice(4, 25)
 
-        console.log(time)
-        this.props.onNewTodo(this.state.todo,time);
-        this.state.todo=''
+        if (this.state.todo === "") {
+            alert("Please enter Todo");
+        }
+        else {
+            var now = new Date();
+            const t = now.toString()
+            const time = t.slice(4, 25)
+
+            console.log(time)
+            this.props.onNewTodo(this.state.todo, time);
+            this.state.todo = ''
+        }
+
+
+
     }
-    handleClickk = (todo,time) => {
-        this.props.onNewTodoo(todo,time);
+    handleClickk = (todo, time) => {
+        this.props.onNewTodoo(todo, time);
     }
 
-    onNewTodo(todo,time){
-        this.setState({todo,time});
+    onNewTodo(todo, time) {
+        this.setState({ todo, time });
     }
 
-    
+
 
     render() {
 
-        
+
 
         return (
             <div>
                 <div>Newtodo</div>
                 <Input
                     value={this.state.todo}
-                    onChange={event => this.onNewTodo(event.target.value,this.state.time)}
-                    style={inputcss} required/>
+                    onChange={event => this.onNewTodo(event.target.value, this.state.time)}
+                    style={inputcss} required />
                 <br />
                 <Button type='primary' style={buttoncss} onClick={this.handleClick} >Add</Button>
                 <Button type='primary' style={buttoncsss} onClick={this.handleClickk}>Delete All</Button>
