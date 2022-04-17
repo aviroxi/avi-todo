@@ -48,17 +48,23 @@ export default class App extends Component {
   }
 
   onClickDelete(selectedTodo) {
-    const a=this.state.todoListArray
-        console.log("selected index is "+selectedTodo)
-        const temp = a.splice(selectedTodo, 1)
-        console.log("deleted "+ temp)
-        this.setState({ todoListArray: a });
-        console.log("after delete "+ this.state.todoListArray)
+    const a = this.state.todoListArray
+    const b = this.state.todoTimeArray
+    console.log("selected index is " + selectedTodo)
+    const temp = a.splice(selectedTodo, 1)
+    const ttemp = b.splice(selectedTodo,1)
+    console.log("deleted " + temp)
+    console.log("deleted " + ttemp)
+
+    this.setState({ todoListArray: a ,todoTimeArray:b});
+    console.log("after delete " + this.state.todoListArray)
+    console.log("after delete " + this.state.todoTimeArray)
+
   }
 
-  dowork(selectedTodo){
+  dowork(selectedTodo) {
     this.setState({ selectedTodo })
-    console.log("button has been clicked and showing it in app.js "+selectedTodo)
+    console.log("button has been clicked and showing it in app.js " + selectedTodo)
     this.onClickDelete(selectedTodo)
   }
 
@@ -76,7 +82,7 @@ export default class App extends Component {
           <Todolist
             list={this.state.todoListArray}
             timelist={this.state.todoTimeArray}
-            onTodoSelect={selectedTodo => {this.dowork(selectedTodo) }}
+            onTodoSelect={selectedTodo => { this.dowork(selectedTodo) }}
             ptodo={this.state.todo}
             ptime={this.state.time}
           />
