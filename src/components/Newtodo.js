@@ -36,35 +36,41 @@ export default class Newtodo extends Component {
         super(props);
 
         this.state = {
-            todo: ''
+            todo: '',
+            time:''
         }
     }
 
     handleClick = () => {
-        this.props.onNewTodo(this.state.todo);
+        var now = new Date();
+        const t = now.toString()
+        const time = t.slice(4, 25)
+
+        console.log(time)
+        this.props.onNewTodo(this.state.todo,time);
         this.state.todo=''
     }
-    handleClickk = (todo) => {
-        this.props.onNewTodoo(todo);
+    handleClickk = (todo,time) => {
+        this.props.onNewTodoo(todo,time);
     }
 
-    onNewTodo(todo){
-        this.setState({todo});
+    onNewTodo(todo,time){
+        this.setState({todo,time});
     }
 
     
 
     render() {
-        
 
+        
 
         return (
             <div>
                 <div>Newtodo</div>
                 <Input
                     value={this.state.todo}
-                    onChange={event => this.onNewTodo(event.target.value)}
-                    style={inputcss} />
+                    onChange={event => this.onNewTodo(event.target.value,this.state.time)}
+                    style={inputcss} required/>
                 <br />
                 <Button type='primary' style={buttoncss} onClick={this.handleClick} >Add</Button>
                 <Button type='primary' style={buttoncsss} onClick={this.handleClickk}>Delete All</Button>

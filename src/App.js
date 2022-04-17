@@ -24,19 +24,25 @@ export default class App extends Component {
 
     this.state = {
       todoListArray: [],
-      todo:''
+      todoTimeArray:[],
+      todo:'',
+      time:''
     }
   }
 
   deletetodo(todo){
-    this.setState({todoListArray:[]})
+    this.setState({todoListArray:[],todoTimeArray:[]})
   }
 
-  addtodo(todo) {
-    this.setState({todo});
+  addtodo(todo,time) {
+    this.setState({todo,time});
     this.setState(previousState => ({
       todoListArray: [...previousState.todoListArray, todo]
     }), () => { console.log(this.state.todoListArray); });
+    
+    this.setState(previousState => ({
+      todoTimeArray: [...previousState.todoTimeArray, time]
+    }), () => { console.log(this.state.todoTimeArray); });
 
   }
 
@@ -46,9 +52,9 @@ export default class App extends Component {
       <div className="App">
         <header className="App-header">
           <h2 style={titlecss}>Avi-Todo {this.props.uname}</h2>
-          <Newtodo onNewTodo={todo => this.addtodo(todo)} onNewTodoo={todo=>this.deletetodo(todo)}/>
+          <Newtodo onNewTodo={(todo,time) => this.addtodo(todo,time)} onNewTodoo={todo=>this.deletetodo(todo)}/>
           <Divider style={dividercss} orientationMargin='4'/>
-          <Todolist list={this.state.todoListArray} ptodo={this.state.todo}/>
+          <Todolist list={this.state.todoListArray} timelist={this.state.todoTimeArray} ptodo={this.state.todo} ptime={this.state.time}/>
         </header>
       </div>
     );
