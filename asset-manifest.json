@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/avi-todo/static/css/main.17f579d2.css",
-    "main.js": "/avi-todo/static/js/main.e1de4e9a.js",
+    "main.js": "/avi-todo/static/js/main.2ebb684b.js",
     "static/js/787.4a7985bc.chunk.js": "/avi-todo/static/js/787.4a7985bc.chunk.js",
     "static/media/logo.svg": "/avi-todo/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/avi-todo/index.html",
     "main.17f579d2.css.map": "/avi-todo/static/css/main.17f579d2.css.map",
-    "main.e1de4e9a.js.map": "/avi-todo/static/js/main.e1de4e9a.js.map",
+    "main.2ebb684b.js.map": "/avi-todo/static/js/main.2ebb684b.js.map",
     "787.4a7985bc.chunk.js.map": "/avi-todo/static/js/787.4a7985bc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.17f579d2.css",
-    "static/js/main.e1de4e9a.js"
+    "static/js/main.2ebb684b.js"
   ]
 }
