@@ -30,7 +30,7 @@ export default class Todolist extends Component {
         return (
             <>
                 <div >
-                    <h1 style={{ color: 'white' }}>TODOLIST</h1>
+                    <h1 style={{ color: 'white', fontFamily:'Major Mono Display' }}>Todolist</h1>
                 </div>
                 {todoList}
             </>
