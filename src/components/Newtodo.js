@@ -84,7 +84,7 @@ export default class Newtodo extends Component {
                 <br />
                 <Button type='primary' style={buttoncss} onClick={this.handleClick} ><PlusOutlined />Add</Button>
                 <Button type='primary' style={buttoncsss} onClick={this.handleClickk}><DeleteOutlined />Delete All</Button>
-                {/* your input is {this.state.todo} */}
+                
             </div>
         )
     }

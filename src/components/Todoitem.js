@@ -29,21 +29,21 @@ export default class Todoitem extends Component {
 
     return (
       <div>
-        <Card
+        <Card className='column'
           title={
-            <Title level={5} style={{ color: 'white' }}>
+            <Title level={4} style={{ color: 'white' }}>
               Avi-Todo - {this.props.pindex + 1}
             </Title>}
           bordered={false}
           style={cardcss}
           extra={
-            <Title level={5} style={{ color: 'white' }}>
+            <Title level={4} style={{ color: 'white' }}>
               <DeleteOutlined onClick={() => this.props.onTodoSelect(this.props.pindex)} style={{ color: 'red' }} />
               <Divider type='vertical'/>
               {this.props.ptime}
             </Title>
           }>
-          <p>{this.props.ptodo}</p>
+          <h3 style={{color:'white'}}>{this.props.ptodo}</h3>
 
 
         </Card>

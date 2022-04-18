@@ -9,7 +9,8 @@ import { Divider } from 'antd';
 
 const titlecss = {
   textAlign: 'center',
-  color: 'white'
+  color: 'white',
+  fontFamily:'Major Mono Display'
 }
 
 const dividercss = {
