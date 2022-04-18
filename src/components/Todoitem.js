@@ -1,6 +1,10 @@
 import { Button, Card, Typography } from 'antd'
 import React, { Component } from 'react'
 
+import { Divider } from 'antd';
+
+import { DeleteOutlined, DeleteTwoTone } from '@ant-design/icons'
+
 import './s.css';
 
 const { Title } = Typography;
@@ -22,19 +26,26 @@ export default class Todoitem extends Component {
 
   }
   render() {
-    
+
     return (
       <div>
-        <Card 
+        <Card
           title={
             <Title level={5} style={{ color: 'white' }}>
-              Avi-Todo - {this.props.pindex+1}
+              Avi-Todo - {this.props.pindex + 1}
             </Title>}
           bordered={false}
           style={cardcss}
-          extra={<Title level={5} style={{ color: 'white' }}>{this.props.ptime}</Title>}>
+          extra={
+            <Title level={5} style={{ color: 'white' }}>
+              <DeleteOutlined onClick={() => this.props.onTodoSelect(this.props.pindex)} style={{ color: 'red' }} />
+              <Divider type='vertical'/>
+              {this.props.ptime}
+            </Title>
+          }>
           <p>{this.props.ptodo}</p>
-          <Button type='primary' danger onClick={()=>this.props.onTodoSelect(this.props.pindex)}>delete</Button>
+
+
         </Card>
 
       </div>

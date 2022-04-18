@@ -1,12 +1,13 @@
 import { Button, Input } from 'antd'
 import React, { Component } from 'react'
 
+import {PlusOutlined,DeleteOutlined} from '@ant-design/icons'
+
 const buttoncss = {
     color: 'white',
     height: '50px',
     fontWeight: 'bold',
     border: 0,
-    width: 100,
     margin: '10px 0',
     fontSize: '1.5rem'
 }
@@ -81,8 +82,8 @@ export default class Newtodo extends Component {
                     onChange={event => this.onNewTodo(event.target.value, this.state.time)}
                     style={inputcss} required />
                 <br />
-                <Button type='primary' style={buttoncss} onClick={this.handleClick} >Add</Button>
-                <Button type='primary' style={buttoncsss} onClick={this.handleClickk}>Delete All</Button>
+                <Button type='primary' style={buttoncss} onClick={this.handleClick} ><PlusOutlined />Add</Button>
+                <Button type='primary' style={buttoncsss} onClick={this.handleClickk}><DeleteOutlined />Delete All</Button>
                 {/* your input is {this.state.todo} */}
             </div>
         )
